@@ -1,0 +1,8 @@
+if (!'devtools' %in% installed.packages()) install.packages(devtools)
+library(devtools)
+source_url("https://raw.githubusercontent.com/anspiess/ECIS/main/getECIS2.R")
+IN <- getECIS2()
+FIT <- fitECIS(IN)
+parECIS(FIT)
+plotECIS(FIT, style = "single", fit = "spl")
+plotECIS(FIT, style = "matrix", fit = "log")
